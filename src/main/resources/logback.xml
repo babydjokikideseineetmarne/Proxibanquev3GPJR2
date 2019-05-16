@@ -25,10 +25,10 @@
 				- %msg%n</pattern>
 		</encoder>
 	</appender>
-	<logger name="simpleLogger.MainTest" level="INFO" />
+	<logger name="simpleLogger.MainTest" level="WARM" />
 	<!-- TRACE, DEBUG, INFO, WARN, ERROR, ALL or OFF -->
 
-	<root level="TRACE">
+	<root level="WARM">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE" />
 	</root>

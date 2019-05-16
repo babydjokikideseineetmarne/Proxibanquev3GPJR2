@@ -13,11 +13,11 @@ public class ServiceImpl implements Service {
 	}
 
 	@Override
-	public void delete(Client c) {
-		dao.delete(c);
+	public void delete(Long id) {
+		dao.delete(id);
 
 	}
-
+	
 //	@Override
 //	public Client findall(Client c) {
 //		dao.find(c);
@@ -25,9 +25,17 @@ public class ServiceImpl implements Service {
 //	}
 
 	@Override
-	public Client findone(String id) {
+	public Client findone(Long id) {
 		Client c = dao.find(id);
 		return c;
 	}
+
+	@Override
+	public void updateService(Client c) {
+		dao.update(c);
+		
+	}
+	
+	
 
 }
