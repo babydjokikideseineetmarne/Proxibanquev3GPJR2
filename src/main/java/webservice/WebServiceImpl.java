@@ -8,20 +8,30 @@ import org.slf4j.LoggerFactory;
 import model.Client;
 import service.ServiceImpl;
 
+/**
+ * Classe définissant les méthodes utilisées dans le WebService.
+ * 
+ * @author GP JR
+ *
+ */
 public class WebServiceImpl implements WebService {
 	ServiceImpl si = new ServiceImpl();
 	private static final Logger LOGGER = LoggerFactory.getLogger(WebServiceImpl.class);
 
+	
 	@Override
 	public Client getClient(String id) {
 
 		Long longId = Long.valueOf(id);
 		Client c = si.findone(longId);
 
-
 		return c;
 	}
 
+	/**
+	 * Méthode permetttant créer un client dans la BD.
+	 * 
+	 */
 	@Override
 	public Response postClient(Client c) {
 		si.save(c);
@@ -29,6 +39,10 @@ public class WebServiceImpl implements WebService {
 
 	}
 
+	/**
+	 * Méthode permetttant de modifier un client dans la BD.
+	 * 
+	 */
 	@Override
 	public Response updateClient(Client c) {
 
@@ -48,6 +62,10 @@ public class WebServiceImpl implements WebService {
 
 	}
 
+	/**
+	 * Méthode permetttant de supprimer un client dans la BD.
+	 * 
+	 */
 	@Override
 	public Response deleteClient(String id) {
 		Long longId = Long.valueOf(id);
